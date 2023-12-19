@@ -1,0 +1,136 @@
+@import "../../assets/globalStyles.scss";
+
+.OppArticle {
+  padding: 18px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #ffffff;
+
+  .OppmainTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+  .OppTab {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    gap: 10px;
+
+    .Oppsection {
+      width: 100%;
+      padding: 15px;
+      background-color: #4a4a4a;
+      color: rgb(255, 255, 255);
+      display: flex;
+      // flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+
+      .OppIcon {
+        width: 8%;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 4vw;
+          aspect-ratio: 1;
+          border-radius: 50%;
+        }
+      }
+
+      .OppDetails {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .OppTitle {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          h2:first-child {
+            width: 70%;
+          }
+        }
+
+        .OppMoreDetails {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: small;
+
+          p:first-child {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .OppArticle {
+    padding: 10px;
+    width: 100%;
+
+    h1,
+    a {
+      font-size: smaller;
+    }
+
+    .Oppsection {
+      display: flex;
+      flex-direction: column;
+
+      .OppIcon {
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 60px !important;
+          aspect-ratio: 1;
+        }
+      }
+
+      .OppDetails {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .OppTitle {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 6px;
+
+          h2:first-child {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+    .OppMoreDetails {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+    }
+  }
+}

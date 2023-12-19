@@ -1,0 +1,105 @@
+@import "../../assets/globalStyles.scss";
+
+.Carticle {
+  padding: 10px 15px;
+  width: 23vw;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-radius: 10px;
+  background-color: #1b3e71;
+
+  h3 {
+    color: white;
+    font-weight: 600;
+  }
+
+  .CarticleTab {
+    // width: 100%;
+    // height: 100%;
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    gap: 8px;
+    // margin-bottom: -15px;
+
+    .C-section {
+      width: 100%;
+      background-color: #3771c8;
+      display: flex;
+      justify-content: space-between;
+      height: 25%;
+      padding: 4px;
+
+      h5 {
+        font-size: small;
+        color: white;
+      }
+      p {
+        font-size: 10px;
+        color: rgb(220, 220, 220);
+      }
+      .Cicons {
+        display: flex;
+        align-items: center;
+        img {
+          width: 2.5vw;
+          aspect-ratio: 1;
+          border-radius: 50%;
+        }
+      }
+      .Cdetails {
+        padding: 6px;
+        width: 85%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        gap: 4px;
+      }
+
+      .CmoreDetails {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+  .CviewMore {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    background-color: #1b3e71;
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: smaller;
+      color: blue;
+    }
+  }
+}
+
+.article::-webkit-scrollbar {
+  width: 12px;
+}
+
+@media screen and (max-width: 1000px) {
+  .Carticle {
+    width: 100%;
+
+    .CarticleTab .C-section {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      gap: 12px;
+      .Cicons {
+        img {
+          width: 4.5vw;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@import "../../assets/globalStyles.scss";
+
+.Narticle {
+  padding: 10px 15px;
+  width: 23vw;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-radius: 10px;
+  background-color: #ffcc00;
+  height: 70vh;
+
+  h3 {
+    color: white;
+    font-weight: 600;
+  }
+
+  .NarticleTab {
+    // width: 100%;
+    // height: 100%;
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    gap: 10px;
+
+    .N-section {
+      width: 100%;
+      background-color: #ffdd53;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 25%;
+      padding: 4px;
+
+      h5 {
+        font-size: small;
+        color: rgb(48, 48, 48);
+      }
+      p {
+        font-size: 10px;
+        color: rgb(98, 98, 98);
+      }
+      .Nicons {
+        display: flex;
+        align-items: center;
+        img {
+          width: 2.5vw;
+          aspect-ratio: 1;
+          border-radius: 50%;
+        }
+      }
+      .Ndetails {
+        padding: 6px;
+        width: 85%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        gap: 4px;
+      }
+
+      .NmoreDetails {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        // gap: 3.8rem;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.Narticle::-webkit-scrollbar {
+  width: 12px;
+}
+
+@media screen and (max-width: 1000px) {
+  .Narticle {
+    width: 100%;
+
+    .NarticleTab .N-section {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      gap: 12px;
+
+      .Nicons {
+        img {
+          width: 4.5vw;
+        }
+      }
+    }
+  }
+}

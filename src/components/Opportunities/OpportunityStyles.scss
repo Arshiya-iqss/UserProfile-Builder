@@ -1,0 +1,107 @@
+@import "../../assets/globalStyles.scss";
+
+.Oarticle {
+  padding: 10px 15px;
+  width: 23vw;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+
+  h3 {
+    color: white;
+    font-weight: 600;
+  }
+
+  .OarticleTab {
+    // width: 100%;
+    // height: 100%;
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    gap: 8px;
+    // margin-bottom: -15px;
+
+    .O-section {
+      width: 100%;
+      background-color: #4a4a4a;
+      display: flex;
+      justify-content: space-between;
+      height: 25%;
+      padding: 4px;
+
+      h5 {
+        font-size: small;
+        color: white;
+      }
+      p {
+        font-size: 10px;
+        color: rgb(220, 220, 220);
+      }
+      .Oicons {
+        display: flex;
+        align-items: center;
+        img {
+          width: 2.5vw;
+          aspect-ratio: 1;
+          border-radius: 50%;
+        }
+      }
+      .Odetails {
+        padding: 6px;
+        width: 85%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        gap: 4px;
+      }
+
+      .OmoreDetails {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        // gap: 3.8rem;
+        align-items: center;
+      }
+    }
+  }
+  .OviewMore {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    background-color: #1e1e1e;
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: smaller;
+      color: blue;
+    }
+  }
+}
+
+.Oarticle::-webkit-scrollbar {
+  width: 12px;
+}
+
+@media screen and (max-width: 1000px) {
+  .Oarticle {
+    width: 100%;
+
+    .OarticleTab .O-section {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      gap: 12px;
+      .Oicons {
+        img {
+          width: 4.5vw;
+        }
+      }
+    }
+  }
+}

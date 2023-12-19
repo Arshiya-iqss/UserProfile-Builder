@@ -1,0 +1,22 @@
+@import "../../assets/globalStyles.scss";
+
+.main-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  text-align: center;
+
+  .pro {
+    color: rgb(229, 229, 0);
+  }
+
+  .fy {
+    color: rgb(0, 0, 189);
+  }
+
+  .ll {
+    color: rgb(170, 92, 170);
+  }
+}

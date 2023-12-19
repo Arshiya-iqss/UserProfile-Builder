@@ -1,0 +1,48 @@
+.details {
+  padding: 30px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 1.4rem;
+  height: 50vh;
+  overflow: auto;
+
+  .socialIcons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    img {
+      width: 3vw;
+      aspect-ratio: 1;
+    }
+  }
+
+  .bio {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    line-height: 2rem;
+  }
+}
+.details::-webkit-scrollbar {
+  width: 12px;
+}
+
+@media screen and (max-width: 900px) {
+  .details {
+    width: 100%;
+
+    .socialIcons {
+      img {
+        width: 5vw;
+      }
+    }
+  }
+  .details::-webkit-scrollbar {
+    width: 12px;
+  }
+}
