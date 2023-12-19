@@ -5,7 +5,7 @@ import Profile from "../../assets/images/profile.png";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
-  const [img, setImg] = useState("");
+  const [img, setImg] = useState(null);
   const [name, setName] = useState();
   const [username, setUserName] = useState();
   const [facebook, setFacebook] = useState();
@@ -15,21 +15,45 @@ function LoginPage() {
   const [biography, SetBiography] = useState();
 
   const navigate = useNavigate();
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    // console.log(file)
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result;
+        setImg(base64String);
+        // console.log(file)
+      };
+
+
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleUserDataChange = (e) => {
     e.preventDefault();
-    const userData = {
-      img,
-      name,
-      username,
-      facebook,
-      dribble,
-      linkedIn,
-      github,
-      biography,
-    };
-    onUserDataChange(userData);
-    console.log(userData);
-  };
+    if (img !== null) {
+      const userData = {
+        img,
+        name,
+        username,
+        facebook,
+        dribble,
+        linkedIn,
+        github,
+        biography,
+      };
+      onUserDataChange(userData);
+      console.log(userData);
+    }
+    else {
+      alert("Please choose an image before proceeding further");
+      return;
+    }
+  }
 
   const onUserDataChange = (userData) => {
     navigate("/dashboard", { state: userData });
@@ -38,47 +62,42 @@ function LoginPage() {
   return (
     <>
       <Logo />
-      <div className="mainSection">
-        <div className="left-section">
-          <div className="content">
-            <label className="fileUpload" htmlFor="myFileInput">
-              {img ? (
-                <img
-                  className="uploadImage"
-                  src={img && img}
-                  alt="Upload Image"
-                />
-              ) : (
-                <img
-                  className="uploadImagePlaceholder"
-                  src={Profile}
-                  alt="Upload Image"
-                />
-              )}
-            </label>
+      <form onSubmit={(e) => handleUserDataChange(e)}>
+        <div className="mainSection">
+          <div className="left-section">
+            <div className="content">
+              <label className="fileUpload" htmlFor="myFileInput">
+                {img ? (
+                  <img
+                    className="uploadImage"
+                    src={img && img}
+                    alt="Upload Image"
+                  />
+                ) : (
+                  <img
+                    className="uploadImagePlaceholder"
+                    src={Profile}
+                    alt="Upload Image"
+                  />
+                )}
+              </label>
+              <input
+                onChange={handleFileChange}
+                id="myFileInput"
+                type="file"
+                accept="image/png, image/gif, image/jpeg"
+                hidden
+              />
 
-            <input
-              onChange={(e) => {
-                const file = e.target.files[0];
-                if (file) {
-                  const imageUrl = URL.createObjectURL(file);
-                  setImg(imageUrl);
-                }
-              }}
-              id="myFileInput"
-              type="file"
-              accept="image/png, image/gif, image/jpeg"
-              hidden
-            />
+            </div>
           </div>
-        </div>
-        <div className="right-section">
-          <div className="title">
-            <h1>MAKE YOUR PROFILE</h1>
-            <p>Fill in all the details to generate your profile</p>
-          </div>
-          <div className="login-details">
-            <form onSubmit={(e) => handleUserDataChange(e)}>
+          <div className="right-section">
+            <div className="title">
+              <h1>MAKE YOUR PROFILE</h1>
+              <p>Fill in all the details to generate your profile</p>
+            </div>
+            <div className="login-details">
+
               <div className="name">
                 <div className="name-id">
                   <label htmlFor="name">Name</label>
@@ -156,10 +175,12 @@ function LoginPage() {
               <div className="button">
                 <input type="submit" />
               </div>
-            </form>
+
+            </div>
           </div>
-        </div>
-      </div>
+
+        </div >
+      </form>
     </>
   );
 }

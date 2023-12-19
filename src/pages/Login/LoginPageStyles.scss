@@ -16,25 +16,36 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      .uploadImage {
-        object-fit: cover;
-      }
+    
       .fileUpload {
-        border-radius: 100%;
-
-        .uploadImage {
-          width: 30vw;
-          aspect-ratio: 1;
-          object-fit: cover;
-          border-radius: 100%;
-        }
-        .uploadImagePlaceholder {
-          width: 30vw;
-          border-radius: 100%;
-          aspect-ratio: 1;
-          object-fit: contain;
-        }
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 30vw;
+        aspect-ratio: 1;
+      }
+    
+      .fileUpload img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    
+      .uploadImagePlaceholder {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: contain;
+      }
+    
+      input[type="file"] {
+        position: absolute;
+        font-size: 100px;
+        opacity: 0;
+        right: 0;
+        top: 0;
       }
     }
   }
